@@ -309,7 +309,6 @@ return Scaffold(
 
             const SizedBox(height: 20),
 
-            // Height and Weight
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -364,8 +363,8 @@ return Scaffold(
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             Column(
-              children: (pokemondata['abilities'] as List<dynamic>)
-                  .map<Widget>((a) => Text(a['ability']['name']))
+              children: (pokemondata['abilities'] as List)
+                  .map((a) => Text(a['ability']['name']))
                   .toList(),
             ),
 
@@ -376,11 +375,12 @@ return Scaffold(
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             Column(
-              children: (pokemondata['moves'] as List<dynamic>)
+              children: (pokemondata['moves'] as List)
                   .take(5)
-                  .map<Widget>((m) => Text(m['move']['name']))
+                  .map((m) => Text(m['move']['name']))
                   .toList(),
             ),
+
             
 
             const SizedBox(height: 20),
